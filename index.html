@@ -151,6 +151,45 @@
 	<div class="loader"></div>
 	<div class="loader"></div>
 </div>
+<!-- Agrega el siguiente script justo antes de cerrar el body tag -->
+<script>
+  let currentSection = 0; // Índice de la sección actual que se muestra
 
+  // Función para ocultar todas las secciones excepto la actual
+  function hideSections() {
+    const sections = document.querySelectorAll('main section');
+    sections.forEach((section, index) => {
+      if (index !== currentSection) {
+        section.style.display = 'none';
+      }
+    });
+  }
+
+  // Función para mostrar la siguiente sección
+  function showNextSection() {
+    const sections = document.querySelectorAll('main section');
+    currentSection = (currentSection + 1) % sections.length;
+    hideSections();
+    sections[currentSection].style.display = 'block';
+  }
+
+  // Iniciar la transición cada 5 segundos (5000 ms)
+  const transitionInterval = setInterval(showNextSection, 5000);
+
+  // Detener la transición cuando el usuario haga clic en una opción del menú lateral
+  const menuOptions = document.querySelectorAll('.options__menu a');
+  menuOptions.forEach((option) => {
+    option.addEventListener('click', () => {
+      clearInterval(transitionInterval); // Detiene la transición automática
+      const targetSectionId = option.getAttribute('href').slice(1);
+      const targetSection = document.getElementById(targetSectionId);
+      if (targetSection) {
+        currentSection = Array.from(targetSection.parentElement.children).indexOf(targetSection);
+        hideSections();
+        targetSection.style.display = 'block';
+      }
+    });
+  });
+</script>
 </body>
 </html>
