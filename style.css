@@ -75,3 +75,8 @@ body {
       margin: 0 20px; /* Márgenes laterales iguales */
     }
   }
+  /*/header/*/
+  .title {
+    font-size: 36px;
+    text-align: center;
+  }
