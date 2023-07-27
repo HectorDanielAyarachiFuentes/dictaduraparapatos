@@ -77,6 +77,28 @@ body {
   }
   /*/header/**/
   .title {
-    font-size: 36px;
+    font-size: 50px;
     text-align: center;
+  }
+/* Definir la animación */
+@keyframes slideLeft {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+
+/* Definir la animación */
+@keyframes slideLeft {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* Aplicar la animación al elemento */
+  .animated-element {
+    animation: slideLeft 10s infinite; /* Nombre de la animación, duración y repetición */
+    width: 100%; /* El ancho del elemento abarcará todo el ancho de la pantalla */
+    background-color: lightblue; /* Color de fondo para mostrar la transición */
+    text-align: center; /* Alineación del texto al centro */
+    font-size: 24px; /* Tamaño de fuente para el texto */
+    padding: 20px; /* Espaciado interno para que el texto no esté pegado al borde */
+    box-sizing: border-box; /* Para incluir el padding dentro del ancho total del elemento */
   }
