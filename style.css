@@ -1,93 +1,91 @@
-/*** Responsive */
-@media(width <48rem){
-    /*Tablets */
-    main{
-        width: 98%;
-    }
-    section{
-        padding:0rem;
-    }
-    section>div{
-        flex-wrap:wrap;
-        flex-direction: column;
-        align-items: center;
-    }
-    .card, .formulario, footer>div{
-        width:100%;
-    }
-    .card{
-        max-width: 31.25rem;
-    }
-    footer>div{
-        margin-bottom: 1.25rem;
-    }
-    footer ul{
-        display:flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .contacto{
-        text-align: center;
-    }
-    footer{
-        flex-wrap:wrap;
-        flex-direction: column;
-    }
-}
-/* Combine both style blocks into one */
-    /* Add your general styles here */
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+  }
+
+  /* Estilos para resoluciones específicas */
+  @media (max-width: 320px) {
+    /* Estilos para pantallas con un ancho de hasta 320 píxeles */
     body {
-        font-family: Arial, sans-serif;
-      }
-      /* Styles for specific resolutions */
-      @media (max-width: 320px) {
-        /* Styles for screens with width up to 320 pixels */
-        body {
-          font-size: 14px;
-        }
-      }
-      @media (max-width: 720px) {
-        /* Styles for screens with width up to 720 pixels */
-        body {
-          font-size: 16px;
-        }
-      }
-      /* Rest of the CSS styles */
-      .active {
-        background-color: yellow;
-      }
-      .menu {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .menu-item {
-        margin-bottom: 10px;
-      }
-      .content {
-        text-align: center;
-      }
-      #inicio-heading {
-        text-align: center;
-      }
-      .footer {
-        text-align: center;
-        margin-top: 50px;
-        margin-bottom: 20px;
-        font-size: 14px;
-        color: gray;
-      }
-      .pyramid-button {
-        background-color: yellow;
-        border: none;
-        color: black;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-        transform: skew(-20deg);
-      }
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 720px) {
+    /* Estilos para pantallas con un ancho de hasta 720 píxeles */
+    body {
+      font-size: 16px;
+    }
+  }
+
+  /* Resto de estilos CSS */
+  .active {
+    background-color: yellow;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-item {
+    margin-bottom: 10px;
+  }
+
+  .content {
+    text-align: center;
+  }
+
+  #inicio-heading {
+    text-align: center;
+  }
+
+  .footer {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: gray;
+  }
+
+  .pyramid-button {
+    background-color: yellow;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transform: skew(-20deg);
+  }
+  /* Estilos para pantallas de hasta 480px (dispositivos móviles) */
+  @media (max-width: 480px) {
+    .w3-container.w3-black h1 {
+      font-size: 50px;
+    }
+    .menu {
+      flex-direction: column;
+      align-items: center;
+    }
+    .menu-item {
+      margin-bottom: 10px;
+    }
+  }
+
+  /* Estilos para hacer el video de YouTube responsive y cuadrado */
+  .video-container {
+    position: relative;
+    width: 50%;
+    padding-top: 50%; /* Relación de aspecto 1:1 (dividir 1 entre 1 y multiplicar por 100) */
+  }
+
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
