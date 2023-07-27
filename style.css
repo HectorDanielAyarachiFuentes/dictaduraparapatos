@@ -59,6 +59,8 @@ body {
     padding-top: 100%; /* Relación de aspecto 1:1 (dividir 1 entre 1 y multiplicar por 100) */
     position: relative;
     overflow: hidden;
+    margin: 0 20px; /* Márgenes laterales iguales en pantallas pequeñas */
+
   }
 
   .video-container iframe {
@@ -73,5 +75,6 @@ body {
   @media (min-width: 768px) {
     .video-container {
       padding-top: 40%; /* Relación de aspecto 16:9 (dividir 9 entre 16 y multiplicar por 100) */
+      margin: 0 20px; /* Márgenes laterales iguales */
     }
   }
