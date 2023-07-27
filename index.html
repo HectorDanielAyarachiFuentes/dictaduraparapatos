@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <title>Dictadura para Patos</title>
@@ -6,6 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <style>
+    /* Combine both style blocks into one */
+    /* Add your general styles here */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    /* Styles for specific resolutions */
+    @media (max-width: 320px) {
+      /* Styles for screens with width up to 320 pixels */
+      body {
+        font-size: 14px;
+      }
+    }
+    @media (max-width: 720px) {
+      /* Styles for screens with width up to 720 pixels */
+      body {
+        font-size: 16px;
+      }
+    }
+    /* Rest of the CSS styles */
     .active {
       background-color: yellow;
     }
@@ -44,27 +63,6 @@
       transform: skew(-20deg);
     }
   </style>
-	 <style>
-    /* Estilos generales para todas las resoluciones */
-    body {
-      font-family: Arial, sans-serif;
-    }
-
-    /* Estilos para resoluciones de 320 píxeles o menos */
-    @media (max-width: 320px) {
-      /* Aquí puedes añadir los estilos específicos para pantallas de 320 píxeles o menos */
-      body {
-        font-size: 14px;
-      }
-    }
-    /* Estilos para resoluciones de 720 píxeles o menos */
-    @media (max-width: 720px) {
-      /* Aquí puedes añadir los estilos específicos para pantallas de 720 píxeles o menos */
-      body {
-        font-size: 16px;
-      }
-    }
-  </style>
 </head>
 <body>
   <div class="w3-container w3-black">
@@ -77,7 +75,7 @@
         <a href="#" class="w3-bar-item w3-button menu-item" onclick="showText('videos-text')">Videos</a>
         <a href="#" class="w3-bar-item w3-button menu-item" onclick="showText('contactos-text')">Contactos</a>
         <a href="#" class="w3-bar-item w3-button menu-item" onclick="showText('galeria-text')">Galería</a>
-        <!-- Agrega aquí más pestañas según tus necesidades -->
+        <!-- Add more tabs here if needed -->
       </div>
     </div>
     <div class="w3-col m10">
@@ -95,14 +93,16 @@
         <p id="galeria-text" class="text" style="display: none;">
           Explora nuestra increíble galería de imágenes y descubre la belleza y el encanto de los patos en su máximo esplendor. Desde majestuosos cisnes hasta coloridos patos mandarines, encontrarás una variedad de fotografías impresionantes que capturan la magia de estas aves acuáticas. ¡Sumérgete en nuestro álbum de fotos y déjate cautivar por la maravillosa diversidad de los patos!
         </p>
-        <!-- Agrega aquí más contenido según tus necesidades -->
+        <!-- Add more content here if needed -->
       </div>
     </div>
   </div>
   <div class="w3-container">
+    <!-- Make sure the source of the audio file "duck_sound.mp3" is valid -->
     <audio id="audio-player" src="https://storage.googleapis.com/mayk-audio-engine/d0fd6ebd1160b346a34b324e0daadebc/output.mp3"></audio>
   </div>
   <div class="w3-container">
+    <!-- Make sure the YouTube embed URL is correct and working -->
     <iframe width="420" height="315" src="https://www.youtube.com/embed/pJK6ERis_Qg?autoplay=1&mute=1"></iframe>
   </div>
   <div class="footer">
@@ -111,6 +111,7 @@
   <div class="w3-container" style="text-align: center; margin-top: 20px;">
     <button onclick="playAudio()" class="pyramid-button">Play</button>
   </div>
+  <!-- Move the JavaScript section to the bottom, just before closing the body tag -->
   <script>
     var previousScrollY = 0;
     function showText(elementId) {
@@ -129,46 +130,5 @@
       audio.play();
     }
   </script>
-  <div class="container">
-	<div class="loader"></div>
-	<div class="loader"></div>
-	<div class="loader"></div>
-</div>
-<!-- Agrega el siguiente script justo antes de cerrar el body tag -->
-<script>
-  let currentSection = 0; // Índice de la sección actual que se muestra
-  // Función para ocultar todas las secciones excepto la actual
-  function hideSections() {
-    const sections = document.querySelectorAll('main section');
-    sections.forEach((section, index) => {
-      if (index !== currentSection) {
-        section.style.display = 'none';
-      }
-    });
-  }
-  // Función para mostrar la siguiente sección
-  function showNextSection() {
-    const sections = document.querySelectorAll('main section');
-    currentSection = (currentSection + 1) % sections.length;
-    hideSections();
-    sections[currentSection].style.display = 'block';
-  }
-  // Iniciar la transición cada 5 segundos (5000 ms)
-  const transitionInterval = setInterval(showNextSection, 5000);
-  // Detener la transición cuando el usuario haga clic en una opción del menú lateral
-  const menuOptions = document.querySelectorAll('.options__menu a');
-  menuOptions.forEach((option) => {
-    option.addEventListener('click', () => {
-      clearInterval(transitionInterval); // Detiene la transición automática
-      const targetSectionId = option.getAttribute('href').slice(1);
-      const targetSection = document.getElementById(targetSectionId);
-      if (targetSection) {
-        currentSection = Array.from(targetSection.parentElement.children).indexOf(targetSection);
-        hideSections();
-        targetSection.style.display = 'block';
-      }
-    });
-  });
-</script>
 </body>
 </html>
